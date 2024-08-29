@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .color-change-button {
+            margin-top: 20px;
+        }
+        .calculator {
+            margin-top: 20px;
+        }
+        
+         body {
+         height: 100%;
+         margin: 0;
+}
+
+.container-1 {
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+    height: 100px;          
+}
+
+button {
+    padding: 10px ;
+    font-size: 16px;
+} 
+    </style>
+</head>
+<body>
+   <div class="container-1">
+    <button id="myButton" >Click me to change color</button></div>
+<script >
+//changing the color of button
+    document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('myButton');
+    const colors = ['#FF0000', '#00FF00', '#0000FF']; // Array of colors
+    let currentColorIndex = 0;
+
+    button.addEventListener('click', () => {
+        currentColorIndex = (currentColorIndex + 1) % colors.length; // Cycle through colors
+        button.style.backgroundColor = colors[currentColorIndex];
+    });
+});
+
+//calculator
+    function getValue() {
+        var x = parseInt(document.getElementById("firstNumber").value);
+        var y = parseInt(document.getElementById("secondNumber").value);
+        return { x, y };
+    }
+
+    
+    function add() {
+        var { x, y } = getValue();
+        var sum = x + y;
+        
+        document.getElementById("resu").value = sum;
+    }
+    function changeColor() {
+           
+            var button = document.getElementById("colorButton");
+            button.style.backgroundColor = "red";
+        }
+       
+
+//alert box
+        function displayGreeting() {
+            var currentHour = new Date().getHours();
+            var greeting;
+
+            if (currentHour < 12) {
+                greeting = "Good Morning!";
+            } else if (currentHour < 18) {
+                greeting = "Good Afternoon!";
+            } else {
+                greeting = "Good Evening!";
+            }
+            alert(greeting);
+        }
+
+        displayGreeting();
+</script>
+
+<div class="container mt-5">
+    <h2 class="text-center"><u>Simple Calculator</u></h2>
+    <div class="form-group">
+        <label for="firstNumber">Enter first number:</label><br>
+        <input type="number"  id="firstNumber" required>
+    </div>
+    <div class="form-group">
+        <label for="secondNumber">Enter second number:</label><br>
+        <input type="number"  id="secondNumber" required>
+    </div>
+    <button onclick="add()" class="btn btn-primary" >Add</button>
+
+    <div class="form-group mt-3">
+        <label for="resu">Result:</label>
+        <input type="number"  id="resu" readonly>
+    </div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+</html>

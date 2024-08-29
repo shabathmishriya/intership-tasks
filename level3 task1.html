@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ensure all images are the same size */
+        .gallery-thumbnail {
+            cursor: pointer;
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        /* Hover effect on thumbnails */
+        .gallery-thumbnail:hover {
+            transform: scale(1.05);
+        }
+
+        /* Alignment of the images */
+        .thumbnail-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        /* Container for enlarged image */
+        .enlarged-image-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Active state for the enlarged image container */
+        .enlarged-image-container.active {
+            display: flex;
+        }
+
+        /* Enlarged image styling */
+        .enlarged-image {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="w6.jpg" class="img-fluid gallery-thumbnail" alt="Thumbnail 1" onclick="openImage(this)">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="ma.jpg" class="img-fluid gallery-thumbnail" alt="Thumbnail 2" onclick="openImage(this)">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="w3.jpg" class="img-fluid gallery-thumbnail" alt="Thumbnail 3" onclick="openImage(this)">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="w1.jpg" class="img-fluid gallery-thumbnail" alt="Thumbnail 4" onclick="openImage(this)">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="w2.jpg" class="img-fluid gallery-thumbnail" alt="Thumbnail 5" onclick="openImage(this)">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="w4.jpg" class="img-fluid gallery-thumbnail" alt="Thumbnail 6" onclick="openImage(this)">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="w8.jpg" class="img-fluid gallery-thumbnail" alt="Thumbnail 7" onclick="openImage(this)">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="w5.jpg" class="img-fluid gallery-thumbnail" alt="Thumbnail 8" onclick="openImage(this)">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="w9.jpg" class="img-fluid gallery-thumbnail" alt="Thumbnail 9" onclick="openImage(this)">
+            </div>
+        </div>
+    </div>
+
+    <!-- Enlarged image container -->
+    <div id="enlargedImageContainer" class="enlarged-image-container" onclick="closeImage()">
+        <img id="enlargedImage" class="enlarged-image" src="" alt="Enlarged Image">
+    </div>
+
+    <script>
+        function openImage(img) {
+            var enlargedImageContainer = document.getElementById("enlargedImageContainer");
+            var enlargedImage = document.getElementById("enlargedImage");
+            enlargedImage.src = img.src;
+            enlargedImageContainer.classList.add("active");
+        }
+
+        function closeImage() {
+            var enlargedImageContainer = document.getElementById("enlargedImageContainer");
+            enlargedImageContainer.classList.remove("active");
+        }
+
+        // Listen for the "Backspace" key press
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Backspace") {
+                closeImage();
+            }
+        });
+    </script>
+
+</body>
+</html>

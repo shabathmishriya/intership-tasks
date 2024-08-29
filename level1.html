@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background: #e8491d;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form input[type="submit"] {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background: #e8491d;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Welcome to srinivas College</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    
+    <div class="container">
+        
+        <h2>About us </h2>
+        <p>The Institute of Engineering & Technology is a constituent college under Srinivas University started with 
+            offering 4 years Bachelor Degree program B.Tech. in Computer Science Engineering, Electronics & Communication 
+            Engineering, Artificial Intelligence & Machine Learning, Cyber Security  & Cyber Forensics.</p>
+        <img src="images1.jpg" alt=" Image">
+
+        <!-- Basic Form -->
+        <h3>Enter your email</h3>
+        <form action="#" method="post">
+            <input type="text" name="email" placeholder="Enter your email address" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

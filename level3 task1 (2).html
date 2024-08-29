@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Image Slideshow</title>
+    <style>
+        
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        @keyframes fade {
+            from {opacity: 0.4}
+            to {opacity: 1}
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 3s;
+        }
+
+        .slideshow {
+            max-width: 1000px;
+            margin: auto;
+            position: relative;
+        }
+        .hero-text {
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #2f2f30;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
+        
+           <h1>Hi, I am Shabath Mishriya</h1>
+           <h2>web developer</h2>
+        
+        </div>
+        </div>
+
+    <div class="slideshow-container">
+
+        <div class="slides fade">
+            <img src="w1.jpg" alt="Image 1">
+        </div>
+
+        <div class="slides fade">
+            <img src="w2.jpg" alt="Image 2">
+        </div>
+
+        <div class="slides fade">
+            <img src="w3.jpg" alt="Image 3">
+        </div>
+      
+        <div class="slides fade">
+            <img src="w4.jpg" alt="Image 3">
+        </div>
+        <div class="slides fade">
+            <img src="w5.jpg" alt="Image 3">
+        </div>
+        <div class="slides fade">
+            <img src="w6.jpg" alt="Image 3">
+        </div>
+
+        
+    </div>
+
+    <script>
+        // JavaScript to control the slideshow
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 2000); 
+        }
+    </script>
+
+</body>
+</html>
